@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        scanner.useLocale(Locale.US); 
+        scanner.useLocale(Locale.US);
 
         int opcao = 0;
         Menuconversor menuconversor = new Menuconversor();
@@ -32,7 +32,6 @@ public class Principal {
                 if(opcao >= 1 && opcao <= 6) {
                     System.out.println("Digite o valor:");
                     valor = scanner.nextDouble();
-                    System.out.println("Valor digitado: " + valor);  // Log para verificar o valor digitado
                     Conversor conversao = null;
 
                     switch (opcao) {
@@ -45,19 +44,19 @@ public class Principal {
                     }
 
                     if (conversao != null) {
-                        System.out.printf("O valor de %.2f %s convertido para %s é: %.2f %s%n",
+                        System.out.printf("O valor de %.2f %s convertido para %s é: %.2f %s%n%n",
                                 valor, conversao.getBase_code(), conversao.getTarget_code(),
                                 conversao.getConversion_result(), conversao.getTarget_code());
                     }
                 } else if (opcao == 7) {
-                    System.out.println("Finalizando a Aplicação");
+                    System.out.printf("Finalizando a Aplicação%n%n");
                 } else {
-                    System.out.println("Opção inválida");
+                    System.out.printf("Opção inválida%n%n");
                 }
 
             } catch (Exception e) {
-                System.out.println("Não foi possível converter, verifique se você digitou o valor corretamente");
-                System.out.println("Finalizando a Aplicação");
+                System.out.printf("Não foi possível converter, verifique se você digitou o valor corretamente%n%n");
+                System.out.printf("Finalizando a Aplicação%n%n");
                 break;
             }
         }

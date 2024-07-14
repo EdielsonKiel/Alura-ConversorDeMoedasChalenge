@@ -17,7 +17,6 @@ public class Menuconversor {
 
     public Conversor conversor(String baseCurrency, String targetCurrency, Double value) {
         String url = "https://v6.exchangerate-api.com/v6/" + API_KEY + "/pair/"+ baseCurrency+"/"+targetCurrency+"/"+value;
-        System.out.println("URL da requisição: " + url);
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
@@ -25,21 +24,19 @@ public class Menuconversor {
 
         try {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println("Resposta da API: " + response.body()); // Log da resposta da API
 
             if (response.statusCode() == 200) {
                 JsonObject jsonObject = gson.fromJson(response.body(), JsonObject.class);
-                if (jsonObject.get("success").getAsBoolean()) {
-                    double rate = jsonObject.getAsJsonObject("rates").get(targetCurrency).getAsDouble();
-                    double convertedValue = value * rate;
-                    System.out.println(value + " " + baseCurrency + " = " + convertedValue + " " + targetCurrency);
+                if (jsonObject.get("result").getAsString().equals("success")) {
+                    double conversionResult = jsonObject.get("conversion_result").getAsDouble();
+                    double rate = jsonObject.get("conversion_rate").getAsDouble();
 
                     // Criar e retornar um objeto Conversor com os dados necessários
                     Conversor conversor = new Conversor();
                     conversor.setBase_code(baseCurrency);
                     conversor.setTarget_code(targetCurrency);
                     conversor.setConversion_rate(rate);
-                    conversor.setConversion_result(convertedValue);
+                    conversor.setConversion_result(conversionResult);
 
                     return conversor;
                 } else {
@@ -53,5 +50,4 @@ public class Menuconversor {
             throw new RuntimeException("Não consigo converter", e);
         }
     }
-
 }
