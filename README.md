@@ -1,15 +1,16 @@
 Conversor de Moedas
 
 Este é um conversor de moedas simples que realiza consultas em tempo real através da API ExchangeRate-API. Ele permite converter valores entre diversas moedas utilizando taxas de câmbio atualizadas.
+Este conversor foi proposto como Chalenge pelo bootcamp Alura-Oracle One.
 
 Funcionalidades:
 
-Converter de USD para BRL;
-Converter de BRL para USD;
-Converter de EUR para BRL;
-Converter de BRL para EUR;
-Converter de USD para EUR;
-Converter de BRL para GBP.
+- Converter de USD para BRL;
+- Converter de BRL para USD;
+- Converter de EUR para BRL;
+- Converter de BRL para EUR;
+- Converter de USD para EUR;
+- Converter de BRL para GBP.
 
 Interface:
 
