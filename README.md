@@ -1,17 +1,23 @@
 Conversor de Moedas
+
 Este é um conversor de moedas simples que realiza consultas em tempo real através da API ExchangeRate-API. Ele permite converter valores entre diversas moedas utilizando taxas de câmbio atualizadas.
 
-Funcionalidades
-Converter de USD para BRL
-Converter de BRL para USD
-Converter de EUR para BRL
-Converter de BRL para EUR
-Converter de USD para EUR
-Converter de BRL para GBP
-Tecnologias Utilizadas
-Java
-API ExchangeRate-API (https://www.exchangerate-api.com/)
-Como Utilizar
+Funcionalidades:
+
+Converter de USD para BRL;
+Converter de BRL para USD;
+Converter de EUR para BRL;
+Converter de BRL para EUR;
+Converter de USD para EUR;
+Converter de BRL para GBP.
+
+Tecnologias Utilizadas:
+
+- Java;
+- API ExchangeRate-API (https://www.exchangerate-api.com/).
+  
+Como Utilizar:
+
 1. Clonar o Repositório:
     git clone (https://github.com/EdielsonKiel/Alura-ConversorDeMoedasChalenge.git)
     cd seu-repositorio
@@ -25,6 +31,11 @@ Como Utilizar
     Execute o programa e siga as instruções exibidas no menu.
     Selecione a opção desejada para a conversão de moedas.
     Insira o valor a ser convertido.
+
+Interface:
+
+![image](https://github.com/user-attachments/assets/992bf03a-2004-4012-8f0a-870108c42b7a)
+
 
 Contribuições
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
